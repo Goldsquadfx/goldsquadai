@@ -16,6 +16,22 @@ if uploaded:
     st.write("🔍 Analyzing your chart...")
 
     classifier = pipeline("image-classification", model="kyujinpy/chart-pattern-recognition")
+    results = classifier(image)
+    label = results[0]["label"].lower()
+    conf = round(results[0]["score"] * 100, 2)
+except Exception:
+    # fallback trend detector
+    img = np.array(image.convert("L"))
+    edges = cv2.Canny(img, 50, 150)
+    gradient = np.mean(np.gradient(edges.astype(float)))
+    label = "fallback"
+    conf = 0
+    if gradient > 0.05:
+        direction = "BUY"
+    elif gradient < -0.05:
+        direction = "SELL"
+    else:
+        direction = "WAIT / NEUTRAL"
     result = classifier(image)[0]
     label = result["label"].lower()
     conf = round(result["score"] * 100, 2)
