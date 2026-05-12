@@ -1,0 +1,6 @@
+streamlit>=1.32.0
+pillow
+torch
+torchvision
+--extra-index-url [download.pytorch.org](https://download.pytorch.org/whl/cpu)
+transformers==4.37.2
