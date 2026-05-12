@@ -15,7 +15,7 @@ if uploaded:
     st.image(image, caption="Uploaded Chart", use_column_width=True)
     st.write("🔍 Analyzing your chart...")
 
-   classifier = pipeline("image-classification", model="kyujinpy/chart-pattern-recognition")
+    classifier = pipeline("image-classification", model="kyujinpy/chart-pattern-recognition")
     result = classifier(image)[0]
     label = result["label"].lower()
     conf = round(result["score"] * 100, 2)
