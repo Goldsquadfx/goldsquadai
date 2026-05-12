@@ -5,7 +5,7 @@ import random
 
 st.set_page_config(page_title="GoldSquadFx AI Analyzer", layout="centered")
 st.set_page_config(page_title="", layout="centered")
-st.title("📈 Big Snapper – AI Chart Analyzer")
+st.title("📈 GoldSquadFx AI Analyzer")
 st.write("Upload a trading chart image to get an instant trade suggestion.")
 
 uploaded = st.file_uploader("Upload your chart (PNG/JPG)", type=["png", "jpg", "jpeg"])
