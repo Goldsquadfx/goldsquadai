@@ -1,6 +1,6 @@
-streamlit>=1.32.0
+streamlit>=1.33.0
 pillow
-torch
-torchvision
---extra-index-url [download.pytorch.org](https://download.pytorch.org/whl/cpu)
-transformers==4.37.2
+torch==2.2.0
+torchvision==0.17.0
+transformers==4.39.3
+opencv-python-headless
